@@ -8,13 +8,11 @@ use AnyEvent::Debounce;
 my $sent = 0;
 my $done = AnyEvent->condvar;
 my $d = AnyEvent::Debounce->new(
-    delay          => 0.5,
-    maximum_delays => 20,
-    cb             => sub { $done->send([@_]) },
+    delay => 2,
+    cb    => sub { $done->send([@_]) },
 );
 
 my $sender; $sender = AnyEvent->timer( after => 0, interval => 0.1, cb => sub {
-    diag "sending";
     $d->send($sent);
     undef $sender if ++$sent > 9;
 });
