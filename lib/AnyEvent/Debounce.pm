@@ -26,6 +26,7 @@ has '_queued_events' => (
     reader   => 'queued_events',
     isa      => 'ArrayRef',
     default  => sub { [] },
+    lazy     => 1,
     clearer  => 'clear_queued_events',
     handles  => { 'queue_event' => 'push' },
 );
