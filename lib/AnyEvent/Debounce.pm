@@ -1,7 +1,6 @@
 package AnyEvent::Debounce;
 # ABSTRACT: condense multiple temporally-nearby events into one
 use Moose;
-
 use AnyEvent;
 
 has 'front_triggered' => (
@@ -175,12 +174,3 @@ Send an event; the handler callback will get everything you pass in.
 =head1 REPOSITORY
 
 L<http://github.com/jrockway/anyevent-debounce>
-
-=head1 AUTHOR
-
-Jonathan Rockway C<< <jrockway@cpan.org> >>
-
-=head1 COPYRIGHT
-
-This module is free software.  You can redistribute it under the same
-terms as perl itself.
